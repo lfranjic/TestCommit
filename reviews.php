@@ -32,7 +32,7 @@ if ($_SERVER["REQUEST_METHOD"] == "POST")
 
         if ($conn->query($sql) === TRUE)
         {
-            echo "Review posted successfully!";
+            //echo "Review posted successfully!";
         }
         else
         {
@@ -74,8 +74,14 @@ if ($_SERVER["REQUEST_METHOD"] == "POST")
                 <li><a href="reservations.php">Reservations</a></li>
             </ul>
             <ul class="nav navbar-nav navbar-right">
-                <li><a href="register.php">Register</a></li>
-                <li><a href="login.php">Login</a></li>
+            <?php
+                if (isset($_SESSION['loggedin']) && $_SESSION['loggedin'] === true) {
+                    echo '<li><a href="logout.php">Logout</a></li>';
+                } else {
+                    echo '<li><a href="register.php">Register</a></li>';
+                    echo '<li><a href="login.php">Login</a></li>';
+                }
+            ?>
             </ul>
           </div>
         </div>

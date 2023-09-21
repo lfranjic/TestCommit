@@ -81,9 +81,9 @@ $conn->close();
         </div>
     </nav>
 </header>
-<main>
+<main style="font-size: 24px">
     <div class="container">
-        <h2>Registration</h2>
+        <h1 style="margin-left: 20rem">Registration</h1>
         <form method="POST" class="form-horizontal" action="" name="register">
           <div class="form-group">
               <label class="control-label col-sm-2" for="name">Name:</label>
@@ -111,7 +111,7 @@ $conn->close();
           </div>
           <div class="form-group">        
             <div class="col-sm-offset-2 col-sm-10">
-            <button type="submit" class="btn btn-primary" name="register">Register</button>
+            <button type="submit" style="font-size: 20px" class="btn btn-primary" name="register">Register</button>
             </div>
           </div>
         </form>

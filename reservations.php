@@ -77,14 +77,20 @@
                 <li class="active"><a href="reservations.php">Reservations</a></li>
             </ul>
             <ul class="nav navbar-nav navbar-right">
-                <li><a href="register.php">Register</a></li>
-                <li><a href="login.php">Login</a></li>
+            <?php
+                if (isset($_SESSION['loggedin']) && $_SESSION['loggedin'] === true) {
+                    echo '<li><a href="logout.php">Logout</a></li>';
+                } else {
+                    echo '<li><a href="register.php">Register</a></li>';
+                    echo '<li><a href="login.php">Login</a></li>';
+                }
+            ?>
             </ul>
           </div>
         </div>
     </nav>
 </header>
-<main>
+<main style="font-size: 25px">
     <div class="container">
         <h2>Reservation form</h2>
         <form method ="post">
@@ -93,7 +99,7 @@
           <input type="hidden" name="loggedInLastName" value="<?php echo $lastName; ?>" id="sessionName">
           <br>
             <label for="numOfPeopleSelect">Select number of people:</label>
-            <select class="form-control" id="numOfPeopleSelect" style="width: 33.5%;" name="numOfPeople">
+            <select class="form-control" id="numOfPeopleSelect" name="numOfPeople">
               <option>2</option>
               <option>3</option>
               <option>4</option>
@@ -107,10 +113,10 @@
             <label for="timeSelect">Select a time for your reservation:</label>
               <input type="time" name="time" required step="1800" id="timeSelect">
               <br>
-              <button style="margin-left: 12.5rem;" type="submit" name="submit" class="btn btn-primary">Submit</button>
+              <button style="margin-left: 22.35rem;" type="submit" name="submit" class="btn btn-primary">Submit</button>
           </div>
         </form>
-        <button style="margin-left: 8.5rem;" id="getTableData" name="showReservations" class="btn btn-secondary">Show Reservations</button>
+        <button style="margin-left: 18.5rem;" id="getTableData" name="showReservations" class="btn btn-secondary">Show Reservations</button>
         <br>
         <div id="tableContainer">
 
@@ -118,6 +124,7 @@
         <br>
         <div class="form-group">
           <form action="cancelReservation.php" method="post" class="cancel-reservation">
+          <h2 style="margin-left: -8.5rem">Select the reservation information to cancel it.</h2>
           <label for="date">Date:</label>
           <input type="date" id="date" name="date" required>
           <br>

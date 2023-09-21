@@ -77,16 +77,22 @@ $conn->close();
                 <li><a href="reservations.php">Reservations</a></li>
             </ul>
             <ul class="nav navbar-nav navbar-right">
-                <li><a href="register.php">Register</a></li>
-                <li class="active"><a href="login.php">Login</a></li>
+            <?php
+                if (isset($_SESSION['loggedin']) && $_SESSION['loggedin'] === true) {
+                    echo '<li><a href="logout.php">Logout</a></li>';
+                } else {
+                    echo '<li><a href="register.php">Register</a></li>';
+                    echo '<li><a href="login.php">Login</a></li>';
+                }
+            ?>
             </ul>
           </div>
         </div>
     </nav>
 </header>
-<main>
+<main style="font-size: 24px">
     <div class="container">
-        <h2>Login</h2>
+        <h1 style="margin-left: 32.5rem">Login</h1>
         <form method="POST" action="" class="form-horizontal">
           <div class="form-group">
             <label class="control-label col-sm-2" for="email" name="email">E-mail:</label>
@@ -103,13 +109,13 @@ $conn->close();
           <div class="form-group">        
             <div class="col-sm-offset-2 col-sm-10">
               <div class="checkbox">
-                <label><input type="checkbox" name="remember">Remember me</label>
+                <label><input type="checkbox" style="margin-top: 11px" name="remember">Remember me</label>
               </div>
             </div>
           </div>
           <div class="form-group">        
             <div class="col-sm-offset-2 col-sm-10">
-              <button type="submit" class="btn btn-primary" name="login">Login</button>
+              <button type="submit" style="font-size: 20px" class="btn btn-primary" name="login">Login</button>
             </div>
           </div>
         </form>

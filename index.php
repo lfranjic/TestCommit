@@ -32,8 +32,14 @@ session_start();
             <li><a href="reservations.php">Reservations</a></li>
         </ul>
         <ul class="nav navbar-nav navbar-right">
-            <li><a href="register.php">Register</a></li>
-            <li><a href="login.php">Login</a></li>
+            <?php
+                if (isset($_SESSION['loggedin']) && $_SESSION['loggedin'] === true) {
+                    echo '<li><a href="logout.php">Logout</a></li>';
+                } else {
+                    echo '<li><a href="register.php">Register</a></li>';
+                    echo '<li><a href="login.php">Login</a></li>';
+                }
+            ?>
         </ul>
       </div>
     </div>
@@ -58,7 +64,7 @@ session_start();
             Il Nuovo Ristorante is a compilation of lively dining experiences. We celebrate the best of Italian American dishes with welcoming hospitality and service. Seasonal changes guide the menu of house-made pasta, antipasti, pizzas and more.
             Seasonal changes, outstanding ingredients and a made-from-scratch philosophy guide by our head chef comes a menu of house-made focaccia and pasta, antipastis, made-to-order wood-fired pizzas, and piatti. The chef curated dinner and dessert menus, pair with the well balanced wine and beverage program.
           </p>
-          <img src="pizza_chef.png" alt="bolognese" style="width: 50%;">
+          <img src="components/pizza_chef.png" alt="bolognese" style="width: 50%;">
         </div>
         <div id="menu1" class="tab-pane fade">
             <h3>Pasta</h3>
@@ -66,27 +72,27 @@ session_start();
                 <div class="row">
                 <div class="col-sm-6 col-md-6 col-lg-6">
                     <div>Pasta bolognese</div>
-                    <img src="bolognese.jpg" alt="bolognese" style="width: 75%;">
+                    <img src="components/bolognese.jpg" alt="bolognese" style="width: 75%;">
                 </div>
                 <div class="col-sm-6 col-md-6 col-lg-6">
                   <div>Pasta milanese</div>
-                  <img src="milanese.jpg" alt="milanese" style="width: 75%;">
+                  <img src="components/milanese.jpg" alt="milanese" style="width: 75%;">
                 </div>
                 <div class="col-sm-6 col-md-6 col-lg-6">
                     <div>Ravioli</div>
-                    <img src="ravioli.jpg" alt="ravioli" style="width: 75%;">
+                    <img src="components/ravioli.jpg" alt="ravioli" style="width: 75%;">
                 </div>
                 <div class="col-sm-6 col-md-6 col-lg-6">
                     <div>Tortelini</div>
-                    <img src="tortelini.jpg" alt="tortelini" style="width: 75%;">
+                    <img src="components/tortelini.jpg" alt="tortelini" style="width: 75%;">
                 </div>
                 <div class="col-sm-6 col-md-6 col-lg-6">
                     <div>Lasagna</div>
-                    <img src="lasagna.jpg" alt="lasagna" style="width: 75%;">
+                    <img src="components/lasagna.jpg" alt="lasagna" style="width: 75%;">
                 </div>
                 <div class="col-sm-6 col-md-6 col-lg-6">
                     <div>Pasta napolitana</div>
-                    <img src="napolitana.jpg" alt="napolitana" style="width: 75%;">
+                    <img src="components/napolitana.jpg" alt="napolitana" style="width: 75%;">
                 </div>
               </div>
             </div>
@@ -97,27 +103,27 @@ session_start();
                 <div class="row">
                 <div class="col-sm-6">
                     <div>Mozzarella salad</div>
-                    <img src="mozzarella_salad.jpg" alt="mozzarella_salad" style="width: 75%;">
+                    <img src="components/mozzarella_salad.jpg" alt="mozzarella_salad" style="width: 75%;">
                 </div>
                 <div class="col-sm-6">
                     <div>Chicken salad</div>
-                    <img src="chicken_salad.jpg" alt="chicken_salad" style="width: 75%;">
+                    <img src="components/chicken_salad.jpg" alt="chicken_salad" style="width: 75%;">
                 </div>
                 <div class="col-sm-6">
                     <div>Greek salad</div>
-                    <img src="greek_salad.jpg" alt="greek_salad" style="width: 75%;">
+                    <img src="components/greek_salad.jpg" alt="greek_salad" style="width: 75%;">
                 </div>
                 <div class="col-sm-6">
                     <div>Mixed salad</div>
-                    <img src="mixed_salad.jpg" alt="mixed_salad" style="width: 75%;">
+                    <img src="components/mixed_salad.jpg" alt="mixed_salad" style="width: 75%;">
                 </div>
                 <div class="col-sm-6">
                     <div>Risotto salad</div>
-                    <img src="risotto_salad.jpg" alt="risotto_salad" style="width: 75%;">
+                    <img src="components/risotto_salad.jpg" alt="risotto_salad" style="width: 75%;">
                 </div>
                 <div class="col-sm-6">
                     <div>Caesar salad</div>
-                    <img src="caesar_salad.jpg" alt="caesar_salad" style="width: 75%;">
+                    <img src="components/caesar_salad.jpg" alt="caesar_salad" style="width: 75%;">
                 </div>
                 </div>
               </div>
@@ -128,27 +134,27 @@ session_start();
                 <div class="row">
                 <div class="col-sm-6">
                     <div>Squid</div>
-                    <img src="squid.jpg" alt="squid" style="width: 75%;">
+                    <img src="components/squid.jpg" alt="squid" style="width: 75%;">
                 </div>
                 <div class="col-sm-6">
                     <div>Prawn</div>
-                    <img src="prawn.jpg" alt="prawn" style="width: 75%;">
+                    <img src="components/prawn.jpg" alt="prawn" style="width: 75%;">
                 </div>
                 <div class="col-sm-6">
                     <div>Ribs</div>
-                    <img src="ribs.jpg" alt="ribs" style="width: 75%;">
+                    <img src="components/ribs.jpg" alt="ribs" style="width: 75%;">
                 </div>
                 <div class="col-sm-6">
                     <div>Chicken alfredo</div>
-                    <img src="chicken_alfredo.jpg" alt="chicken_alfredo" style="width: 75%;">
+                    <img src="components/chicken_alfredo.jpg" alt="chicken_alfredo" style="width: 75%;">
                 </div>
                 <div class="col-sm-6">
                     <div>Curry chicken</div>
-                    <img src="curry_chicken.jpg" alt="curry_chicken" style="width: 75%;">
+                    <img src="components/curry_chicken.jpg" alt="curry_chicken" style="width: 75%;">
                 </div>
                 <div class="col-sm-6">
                     <div>Salmon</div>
-                    <img src="salmon.jpg" alt="salmon" style="width: 75%;">
+                    <img src="components/salmon.jpg" alt="salmon" style="width: 75%;">
                 </div>
                 </div>
               </div>
@@ -159,27 +165,27 @@ session_start();
                 <div class="row">
                 <div class="col-sm-6">
                     <div>Pizza Italiana</div>
-                    <img src="pizza_italiana.jpg" alt="pizza_italiana" style="width: 75%;">
+                    <img src="components/pizza_italiana.jpg" alt="pizza_italiana" style="width: 75%;">
                 </div>
                 <div class="col-sm-6">
                     <div>Pizza Americana</div>
-                    <img src="american_pizza.jpg" alt="american_pizza" style="width: 68%;">
+                    <img src="components/american_pizza.jpg" alt="american_pizza" style="width: 68%;">
                 </div>
                 <div class="col-sm-6">
                     <div>Vegan pizza</div>
-                    <img src="vegan_pizza.jpg" alt="vegan_pizza" style="width: 75%;">
+                    <img src="components/vegan_pizza.jpg" alt="vegan_pizza" style="width: 75%;">
                 </div>
                 <div class="col-sm-6">
                     <div>Vegetarian pizza</div>
-                    <img src="vegetarian_pizza.jpg" alt="vegetarian_pizza" style="width: 67%;">
+                    <img src="components/vegetarian_pizza.jpg" alt="vegetarian_pizza" style="width: 67%;">
                 </div>
                 <div class="col-sm-6">
                     <div>Calzone</div>
-                    <img src="calzone.jpg" alt="calzone" style="width: 75%;">
+                    <img src="components/calzone.jpg" alt="calzone" style="width: 75%;">
                 </div>
                 <div class="col-sm-6">
                     <div>Seafood pizza</div>
-                    <img src="seafood_pizza.jpg" alt="seafood_pizza" style="width: 75%;">
+                    <img src="components/seafood_pizza.jpg" alt="seafood_pizza" style="width: 75%;">
                 </div>
                 </div>
               </div>
@@ -190,27 +196,27 @@ session_start();
                 <div class="row">
                 <div class="col-sm-6">
                     <div>Banana split</div>
-                    <img src="banana_split.jpg" alt="banana_split" style="width: 75%;">
+                    <img src="components/banana_split.jpg" alt="banana_split" style="width: 75%;">
                 </div>
                 <div class="col-sm-6">
                     <div>Dessert pizza</div>
-                    <img src="dessert_pizza.jpg" alt="dessert_pizza" style="width: 75%;">
+                    <img src="components/dessert_pizza.jpg" alt="dessert_pizza" style="width: 75%;">
                 </div>
                 <div class="col-sm-6">
                     <div>Pancakes</div>
-                    <img src="pancake.jpg" alt="pancake" style="width: 75%;">
+                    <img src="components/pancake.jpg" alt="pancake" style="width: 75%;">
                 </div>
                 <div class="col-sm-6">
                     <div>Tiramisu</div>
-                    <img src="tiramisu.jpg" alt="tiramisu" style="width: 75%;">
+                    <img src="components/tiramisu.jpg" alt="tiramisu" style="width: 75%;">
                 </div>
                 <div class="col-sm-6">
                     <div>Macaroons</div>
-                    <img src="macaroons.jpg" alt="macaroons" style="width: 75%;">
+                    <img src="components/macaroons.jpg" alt="macaroons" style="width: 75%;">
                 </div>
                 <div class="col-sm-6">
                     <div>waffles</div>
-                    <img src="waffles.jpg" alt="waffles" style="width: 79%;">
+                    <img src="components/waffles.jpg" alt="waffles" style="width: 79%;">
                 </div>
                 </div>
               </div>
@@ -221,27 +227,27 @@ session_start();
                 <div class="row">
                 <div class="col-sm-6">
                     <div>Coffee</div>
-                    <img src="coffee.jpg" alt="coffee" style="width: 75%;">
+                    <img src="components/coffee.jpg" alt="coffee" style="width: 75%;">
                 </div>
                 <div class="col-sm-6">
                     <div>Sparkling water</div>
-                    <img src="sparkling_water.jpg" alt="sparkling_water" style="width: 75%;">
+                    <img src="components/sparkling_water.jpg" alt="sparkling_water" style="width: 75%;">
                 </div>
                 <div class="col-sm-6">
                     <div>Red wine</div>
-                    <img src="red_wine.jpg" alt="red_wine" style="width: 75%;">
+                    <img src="components/red_wine.jpg" alt="red_wine" style="width: 75%;">
                 </div>
                 <div class="col-sm-6">
                     <div>White wine</div>
-                    <img src="white_wine.jpg" alt="white_wine" style="width: 75%;">
+                    <img src="components/white_wine.jpg" alt="white_wine" style="width: 75%;">
                 </div>
                 <div class="col-sm-6">
                     <div>Tea</div>
-                    <img src="tea.jpg" alt="tea" style="width: 75%;">
+                    <img src="components/tea.jpg" alt="tea" style="width: 75%;">
                 </div>
                 <div class="col-sm-6">
                     <div>Coca Cola</div>
-                    <img src="coca_cola.jpg" alt="coca_cola" style="width: 69%;">
+                    <img src="components/coca_cola.jpg" alt="coca_cola" style="width: 69%;">
                 </div>
                 </div>
               </div>

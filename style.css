@@ -89,5 +89,22 @@ footer
 
 .cancel-reservation
 {
+    margin-left: 8.5rem;
     margin-top: 2rem;
+}
+
+main
+{
+    margin-left: 23.5rem;
+}
+
+#numOfPeopleSelect
+{
+    max-width: 33.5%;
+}
+
+.col-sm-10
+{
+    width: 35%;
+    margin-top: 8px;
 }
