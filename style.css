@@ -1,0 +1,93 @@
+html, body, div, main
+{
+    font-family: cursive;
+}
+
+html body
+{
+    background-color: #E3AE92;
+}
+
+.navbar
+{
+    background-color: #414150;
+    border: 0ch;
+}
+
+.navbar-header
+{
+    color: whitesmoke;
+}
+
+.container
+{
+    margin-left: 11.65rem;
+}
+
+.nav-tabs a
+{
+    color: whitesmoke;
+    background-color: crimson;
+}
+
+.nav-tabs a:hover
+{
+    color: #414150;
+}
+
+footer
+{
+    position: fixed;
+    text-align: center;
+    left: 0;
+    bottom: 0;
+    width: 100%;
+    background-color: #414150;
+    color: white;
+    text-align: center;
+}
+
+.tab-content p
+{
+    font-size: medium;
+}
+
+.col-sm-6
+{
+    margin-bottom: 2rem;
+}
+
+.form-group label, select
+{
+    margin-bottom: 2rem;
+}
+
+#tableContainer
+{
+    display: none;
+    margin-top: 2rem;
+}
+
+#tableContainer table, th, td, tr
+{
+    border: 2px solid #414150;
+    border-collapse: collapse;
+    text-align: center;
+    padding: 5px;
+}
+
+#tableContainer th
+{
+    background-color: crimson;
+    color: whitesmoke;
+}
+
+#tableContainer td
+{
+    background-color: whitesmoke;
+}
+
+.cancel-reservation
+{
+    margin-top: 2rem;
+}
