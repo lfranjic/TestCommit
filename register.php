@@ -32,7 +32,8 @@ if (isset($_POST['register']))
         $insertQuery = "INSERT INTO korisnici (ime, prezime, email, lozinka) VALUES ('$name', '$lastName', '$email', '$password')";
         if ($conn->query($insertQuery) === TRUE)
         {
-            echo "Registration successful. You can now login.";
+            //echo "Registration successful. You can now login.";
+            header("Location: login.php");
         }
         else
         {
